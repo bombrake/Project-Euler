@@ -1,47 +1,49 @@
-/*
-#include<stdio.h>
 #include<iostream>
+#include<stdio.h>
 #include<math.h>
+//Largest prime factor of a number
 using namespace std;
-int i, j,c=0,digits[20],length=0;
-int palindrome(int number)
+bool isPrime(int n)
 {
-	for (i = 0; i < 20; i++)
+	int i;bool p=true;
+	for(i=2;i<=sqrtf(n);i++)
 	{
-		digits[i] = number % (10);//extract digits from number
-		number /= 10;
-		if (number == 0)
+		if(n%i==0)
 		{
-			break;
+			//cout<<"Not Prime";
+			p=false;
+			return p;
 		}
 	}
-	length = i + 1;
-	for (i = 0; i < length; i++)
-	{
-		if (digits[i] == digits[length - i - 1])
-		{
-			c++;
-		}
-	}
-	if (c == length)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	//cout<<"Prime";
+	return p;
 }
-void main()
+int main()
 {
-	int n1, n2, prod;
-	n1 = 99; n2 = 99; prod = n1*n2;
-	cout << prod;
-	//int number;
-	//cin >> number;//get number
-	//cout << length<<endl;
-	//palindrome(digits);//check if palindrome
-	getchar();
+	//accept the number
+	unsigned long int n = 600851475143;
+	//cout<<"Enter the number"<<endl;
+	//cin>>n;
+	//calculate the factors
+	unsigned long int j=1;
+	while(j<sqrtf(n))
+	{
+		if(isPrime(j)&(n%j==0))
+		{
+			cout<<j<<" "; //print the factors
+		}
+		j++;
+	}
+	return 0;
+}
 
-}
-*/
+//Runtime: 0.717 seconds.Can be improved ??
+
+
+
+
+
+
+
+
+

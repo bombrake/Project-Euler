@@ -1,7 +1,7 @@
 #include <iostream>
 #include<stdio.h>
 using namespace std;
-void main()
+int main()
 {
 	int i,fib[2] = { 1, 2},sum=2,newturn=0;
 	for (i = 2; i<100000; i++)
@@ -19,4 +19,5 @@ void main()
 		fib[1] = newturn;
 	}
 	cout << sum;
+	return 0;
 }
