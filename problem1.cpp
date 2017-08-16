@@ -1,7 +1,7 @@
 #include <iostream>
 #include<stdio.h>
 using namespace std;
-void main()
+/*int main()
 {
 	int i,fib[2] = { 1, 2},sum=2,newturn=0;
 	for (i = 2; i<100000; i++)
@@ -19,4 +19,22 @@ void main()
 		fib[1] = newturn;
 	}
 	cout << sum;
+	return 0;
+}
+*/
+//Sum of multiples of 3 or 5 under 1000
+int main()
+{
+	int sum=0;
+	int i=0;
+	while(i<1000)
+	{
+		if((i%3==0)||(i%5==0))
+		{
+			sum+=i;
+		}
+		i++;
+	}
+	cout<< sum;
+	return 0;
 }
